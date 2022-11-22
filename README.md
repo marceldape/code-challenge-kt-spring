@@ -15,8 +15,9 @@ Use it to compile, test and run the application.
 
 Depending on the operating system used, the following error may appear when running gradlew:
 ```/usr/bin/env: ‘sh\r’: No such file or directory```. This error appears when there is windows line endings instead of
-unix line endings. There are many tools available to solve this problem. I recommend run the tool `dos2unix` (`sudo apt-get install dos2unix; dos2unix gradlew`).
-### How to run it
+unix line endings. There are many tools available to solve this problem. I recommend using the tool `dos2unix` 
+(`sudo apt-get install dos2unix; dos2unix gradlew`).
+### How to run
 
 #### Using Docker
 
@@ -37,7 +38,7 @@ From the root directory, grant execute permission for gradlew (`chmod +x gradlew
 ./gradlew bootRun
 ```
 
-### How to test it
+### How to test
 
 This project has an extreme high level of testing, from unit tests to acceptance tests covering all three layers.
 
@@ -72,8 +73,20 @@ Where:
 - _STOCK_SYMBOL_ is the ticker of the company. Example: AAPL for Apple, AMZN for Amazon, etc...
 - _INTERVAL_ defines the price in relation to a time interval. Must be: `daily`, `weekly` or `monthly`
 
-For example: use `http://localhost:8080/api/v1/stocks/AAPL?interval=weekly` in order to get information on the APPLE
-company and its weekly value
+#### Examples:
+Interact with the API via browser, curl or postman.
+
+**By curl:**
+In order to get information on the APPLE company and its weekly value
+```
+# Get three tickers
+curl http://localhost:8080/api/v1/companies
+# Get info about AAPL (apple) stock and their weekly value
+curl http://localhost:8080/api/v1/stocks/AAPL?interval=weekly
+```
+
+**By Postman:**
+You can import the postman collection [Fintech-code-challenge.postman_collection.json](src/test/kotlin/com/dapem/codechallenge/infrastructure/integration/Fintech-code-challenge.postman_collection.json) from the repository which shows two examples of requests
 
 ---
 
