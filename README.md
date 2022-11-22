@@ -13,6 +13,9 @@ so the structure is based on three layers: infrastructure, application and domai
 The repository provides a compiled version of gradle called `gradlew` (for unix) and `gradle.bat` (for windows users).
 Use it to compile, test and run the application.
 
+Depending on the operating system used, the following error may appear when running gradlew:
+```/usr/bin/env: ‘sh\r’: No such file or directory```. This error appears when there is windows line endings instead of
+unix line endings. There are many tools available to solve this problem. I recommend run the tool `dos2unix` (`sudo apt-get install dos2unix; dos2unix gradlew`).
 ### How to run it
 
 #### Using Docker
