@@ -22,10 +22,10 @@ unix line endings. There are many tools available to solve this problem. I recom
 #### Using Docker
 
 A pre-compiled version is provided by
-DockerHub: [marceldape/code-challenge-kt-spring-kt-spring](https://hub.docker.com/repository/docker/marceldape/code-challenge-kt-spring-kt-spring)
+DockerHub: [marceldape/code-challenge-kt-spring](https://hub.docker.com/repository/docker/marceldape/code-challenge-kt-spring)
 
 ```bash
-docker run -d -p 8080:8080 --name code-challenge-kt-spring-kt-spring marceldape/code-challenge-kt-spring-kt-spring:latest
+docker run -d -p 8080:8080 --name code-challenge-kt-spring marceldape/code-challenge-kt-spring:latest
 ```
 
 Note: all the images are build by the CI pipeline.
@@ -86,7 +86,7 @@ curl http://localhost:8080/api/v1/stocks/AAPL?interval=weekly
 ```
 
 **By Postman:**
-You can import the postman collection [Fintech-code-challenge-kt-spring.postman_collection.json](src/test/kotlin/com/dapem/codechallenge/infrastructure/integration/Fintech-code-challenge-kt-spring.postman_collection.json) from the repository which shows two examples of requests
+You can import the postman collection [Fintech-code-challenge-kt-spring.postman_collection.json](src/test/kotlin/com/dapem/codechallenge/infrastructure/integration/Fintech-code-challenge.postman_collection.json) from the repository which shows two examples of requests
 
 ---
 
