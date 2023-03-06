@@ -1,1 +1,1 @@
-rootProject.name = "code-challenge"
+rootProject.name = "code-challenge-kt-spring"

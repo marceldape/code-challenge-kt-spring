@@ -1,8 +1,18 @@
-FROM openjdk:11.0.7-jre-slim-buster
+FROM gradle:jdk17-alpine as builder
 
-WORKDIR /code-challenge
-COPY build/libs/code-challenge-0.0.1-SNAPSHOT.jar .
+WORKDIR /code-challenge-kt-spring
+COPY . .
 
-EXPOSE 8080
+USER root
+RUN chown -R gradle /code-challenge-kt-spring
 
-ENTRYPOINT ["java", "-jar", "code-challenge-0.0.1-SNAPSHOT.jar"]
+USER gradle
+RUN gradle build --stacktrace
+
+FROM openjdk:20-ea-17-jdk-slim-buster
+WORKDIR /home/application/kotlin
+
+COPY --from=builder "/code-challenge-kt-spring/build/libs/code-challenge-kt-spring-*.jar" "./"
+
+ENTRYPOINT java -jar -Dspring.profiles.active=$SPRING_PROFILE code-challenge-kt-spring-*.jar
+
