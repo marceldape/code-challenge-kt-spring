@@ -30,9 +30,9 @@ jobs:
 #          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Build Docker image
-        run: docker build . -t marceldape/code-challenge-kt-spring-kt-spring:latest
+        run: docker build . -t marceldape/code-challenge-kt-spring:latest
 
       - name: Push image to DockerHub
         run: |
           docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_PWD }} docker.io
-          docker image push marceldape/code-challenge-kt-spring-kt-spring:latest
+          docker image push marceldape/code-challenge-kt-spring:latest
